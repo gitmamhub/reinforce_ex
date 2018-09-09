@@ -20,30 +20,57 @@ p dir_610 = train_info[2][:direction]
 
 
 
-north_bound_train = []
-east_bound_train = []
-
-      n_counter = 0
-      e_counter = 0
-      counter_1 = 0
-      train_info.each do |num|
-          if (train_info[counter_1][:direction] == 'north')
-             north_bound_train[n_counter] = train_info[counter_1][:train]
-             n_counter = n_counter + 1
-
-         elsif (train_info[counter_1][:direction] == 'east')
-            east_bound_train[e_counter] = train_info[counter_1][:train]
-            e_counter = e_counter + 1
-          else
-          end
-           counter_1 = counter_1 + 1
-      end
 
 
 
+def train_direction (train_info, dir_train )
 
-puts  " northbound train : #{north_bound_train}"
-puts  "eastbound train : #{east_bound_train}"
+find_direction = []  # stores the train name with the particular direction
+
+
+
+    counter_1 = 0
+    n_counter = 0
+     train_info.each do |num|
+          if (train_info[counter_1][:direction] == dir_train)
+            find_direction [n_counter] = train_info[counter_1][:train]
+             n_counter +=1
+
+           end
+           counter_1 +=1
+     end
+      return find_direction
+
+
+end
+
+
+puts ("northound trains are : #{train_direction(train_info,'north')}")
+puts ("eastbound trains are : #{train_direction(train_info,'east')}")
+
+
+      #
+      # n_counter = 0
+      # e_counter = 0
+      # counter_1 = 0
+      # train_info.each do |num|
+      #     if (train_info[counter_1][:direction] == 'north')
+      #        north_bound_train[n_counter] = train_info[counter_1][:train]
+      #        n_counter = n_counter + 1
+      #
+      #    elsif (train_info[counter_1][:direction] == 'east')
+      #       east_bound_train[e_counter] = train_info[counter_1][:train]
+      #       e_counter = e_counter + 1
+      #     else
+      #     end
+      #      counter_1 = counter_1 + 1
+      # end
+      #
+
+
+
+# puts  " northbound train : #{north_bound_train}"
+# puts  "eastbound train : #{east_bound_train}"
 
 
 
