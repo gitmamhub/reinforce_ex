@@ -49,6 +49,17 @@ puts ("northound trains are : #{train_direction(train_info,'north')}")
 puts ("eastbound trains are : #{train_direction(train_info,'east')}")
 
 
+train_info[0][:first_departure_time] = "6:00 am"
+
+p '\n\n\n'
+
+counter_2 =0
+train_info.each do |num|
+   p train_info[counter_2]
+   counter_2 +=1
+end
+
+
       #
       # n_counter = 0
       # e_counter = 0
